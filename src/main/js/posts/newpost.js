@@ -4,22 +4,17 @@ import axios from 'axios';
 class NewPost extends React.Component {
   constructor(props) {
     super(props);
-
   }
 
   submit() {
-    var textAreaNewPost = document.getElementById("postInput").value;
-    // client({method: 'POST', path: '/api/posts', entity: {"content": "hello"} }).then(response => {
-    //   console.log(response);
-    //   // this.setState({posts: response.entity._embedded.posts});
-    // }).catch(e => {
-    //   console.log(e);
-    // });
+    let that = this;
+    let textAreaNewPost = document.getElementById("postInput").value;
     axios.post('/api/posts', {
       content: textAreaNewPost
     })
     .then(function (response) {
       console.log(response);
+      that.props.getPosts();
     })
     .catch(function (error) {
       console.log(error);
@@ -28,6 +23,7 @@ class NewPost extends React.Component {
   }
 
 	render() {
+    console.log(this.props);
 		return (
 
       <div>
