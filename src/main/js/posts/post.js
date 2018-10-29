@@ -7,7 +7,7 @@ const Post = (props) => {
 	// var key = get digit of props.post._links.href
 	return (
 		<div className='post-main'>
-			<Delete post={props.post} />
+			<Delete getPosts={props.getPosts} post={props.post} />
 			<Update content={props.post.content} key={props.key} />
 			<div className='post-content'>
 				{props.post.content}

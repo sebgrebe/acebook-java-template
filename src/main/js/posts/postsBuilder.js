@@ -26,7 +26,7 @@ class PostsBuilder extends React.Component {
 		return (
       <div>
         <NewPost getPosts={this.getPosts} />
-        <Posts posts={this.state.posts}/>
+        <Posts getPosts={this.getPosts} posts={this.state.posts}/>
       </div>
 		)
 	}
