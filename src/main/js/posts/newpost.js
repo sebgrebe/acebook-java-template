@@ -27,7 +27,7 @@ class NewPost extends React.Component {
 		return (
 
       <div>
-        <textarea id="postInput">
+        <textarea id="postInput" placeholder="Enter Post">
         </textarea>
         <button onClick={() => this.submit()}>Post</button>
       </div>

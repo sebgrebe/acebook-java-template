@@ -8,7 +8,7 @@ const Post = (props) => {
 	return (
 		<div className='post-main'>
 			<Delete getPosts={props.getPosts} post={props.post} />
-			<Update content={props.post.content} key={props.key} />
+			<Update content={props.post.content} post={props.post} />
 			<div className='post-content'>
 				{props.post.content}
 			</div>

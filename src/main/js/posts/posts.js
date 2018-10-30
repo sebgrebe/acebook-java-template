@@ -4,7 +4,7 @@ import Post from './post'
 class Posts extends React.Component {
   constructor(props) {
     super(props);
-    this.getPosts = this.getPosts.bind(this);
+    this.renderPosts = this.renderPosts.bind(this);
   }
 
 	render() {
@@ -14,15 +14,15 @@ class Posts extends React.Component {
           Posts
         </h1>
   			<div className='posts-items'>
-  				{this.getPosts()}
+  				{this.renderPosts()}
   			</div>
       </article>
 		)
 	}
 
-  getPosts() {
+  renderPosts() {
     return this.props.posts.map(post =>
-			<Post key={post._links.self.href} getPosts={this.props.getPosts} post={post}/>
+			<Post getPosts={this.props.getPosts} post={post}/>
 		);
   }
 }

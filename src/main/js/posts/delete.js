@@ -9,7 +9,6 @@ class Delete extends React.Component {
 
   delete() {
       var that = this;
-      console.log(this.props.post._links.post.href);
       var urlPath = this.props.post._links.post.href;
       var deleteObject = {
         method: 'delete',
