@@ -6,15 +6,16 @@ class NewPost extends React.Component {
     super(props);
   }
 
-  submit() {
+  submit(axiosLib = axios) {
     let that = this;
     let textAreaNewPost = document.getElementById("postInput").value;
-    axios.post('/api/posts', {
+    axiosLib.post('/api/posts', {
       content: textAreaNewPost
     })
     .then(function (response) {
-      console.log(response);
+
       that.props.getPosts();
+      return response;
     })
     .catch(function (error) {
       console.log(error);
