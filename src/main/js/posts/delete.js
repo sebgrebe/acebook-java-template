@@ -7,14 +7,10 @@ class Delete extends React.Component {
 
   }
 
-  delete() {
+  delete(axiosLib = axios) {
       var that = this;
       var urlPath = this.props.post._links.post.href;
-      var deleteObject = {
-        method: 'delete',
-        url: urlPath
-      }
-      axios(deleteObject)
+      axiosLib.delete(urlPath)
       .then(function() {
         that.props.getPosts();
       })
