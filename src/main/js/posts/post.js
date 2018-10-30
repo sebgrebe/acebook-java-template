@@ -1,19 +1,43 @@
 import React from 'react';
 import Delete from './delete.js'
 import Update from './update.js'
+import UpdateBtn from './updateBtn.js'
 
-const Post = (props) => {
-	console.log(props);
-	// var key = get digit of props.post._links.href
-	return (
-		<div className='post-main'>
-			<Delete getPosts={props.getPosts} post={props.post} />
-			<Update content={props.post.content} post={props.post} />
-			<div className='post-content'>
-				{props.post.content}
-			</div>
-		</div>
-	)
+class Post extends React.Component {
+	constructor(props) {
+		super(props)
+		this.state = {showUpdate: false};
+		this.toggleUpdate = this.toggleUpdate.bind(this);
+	}
+
+	toggleUpdate() {
+		var showUpdate = this.state.showUpdate
+		this.setState({
+			showUpdate: showUpdate == false ? true : false
+		})
+	}
+
+	render() {
+		console.log(this.state.showUpdate);
+		if (this.state.showUpdate == true) {
+			return (
+				<div className='post-main'>
+					<Update content={this.props.post.content} post={this.props.post} />
+				</div>
+			)
+		} else {
+			return (
+				<div className='post-main'>
+					<Delete getPosts={this.props.getPosts} post={this.props.post} />
+					<UpdateBtn toggleUpdate={this.toggleUpdate}/>
+					<div className='post-content'>
+						{this.props.post.content}
+					</div>
+				</div>
+			)
+		}
+	}
+
 }
 
 export default Post;
