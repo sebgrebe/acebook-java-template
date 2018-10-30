@@ -18,11 +18,10 @@ class Post extends React.Component {
 	}
 
 	render() {
-		console.log(this.state.showUpdate);
 		if (this.state.showUpdate == true) {
 			return (
 				<div className='post-main'>
-					<Update content={this.props.post.content} post={this.props.post} />
+					<Update content={this.props.post.content} getPosts={this.props.getPosts} post={this.props.post} toggleUpdate={this.toggleUpdate} />
 				</div>
 			)
 		} else {
