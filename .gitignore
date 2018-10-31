@@ -6,4 +6,5 @@
 dependency-reduced-pom.xml
 *.iml
 .log
+.vscode
 /src/main/resources/static/built
