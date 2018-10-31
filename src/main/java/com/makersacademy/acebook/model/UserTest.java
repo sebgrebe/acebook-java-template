@@ -27,4 +27,9 @@ public class UserTest {
         assertEquals("password_test",user.getPassword());
     }
 
+    @Test
+    public void encryptPassword() {
+        
+    }
+
 }

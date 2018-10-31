@@ -5,6 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.GenerationType;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import lombok.Data;
 
@@ -19,6 +20,7 @@ public class User {
     private String username;
     private String email;
     private String password;
+    private BCryptPasswordEncoder bCryptPasswordEncoder;
 
     private User() {}
 
@@ -43,5 +45,9 @@ public class User {
 
     public Long getId() {
         return this.id;
+    }
+
+    public String encrytPassword(String password) {
+        return bCryptPasswordEncoder.encode(password);
     }
 }
