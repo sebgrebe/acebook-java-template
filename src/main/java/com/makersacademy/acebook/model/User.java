@@ -1,4 +1,4 @@
-package com.makersacademy.acebook;
+package com.makersacademy.acebook.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -16,7 +16,7 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String content;
+    private String username;
 
     private User() {}
 
