@@ -1,6 +1,7 @@
 /target
 .idea/
 .cache
+.settings
 /node_modules
 dependency-reduced-pom.xml
 *.iml
