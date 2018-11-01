@@ -1,6 +1,7 @@
 import React from 'react';
 import Posts from './posts';
 import NewPost from './newpost';
+import Signup from './signup';
 import axios from 'axios';
 
 class PostsBuilder extends React.Component {
@@ -25,6 +26,7 @@ class PostsBuilder extends React.Component {
 	render() {
 		return (
       <div>
+        <Signup />
         <NewPost getPosts={this.getPosts} />
         <Posts getPosts={this.getPosts} posts={this.state.posts}/>
       </div>
