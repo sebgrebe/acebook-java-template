@@ -6,10 +6,13 @@ class Signup extends React.Component {
     super(props);
   }
 
-  logger(axioslib = axios){
-    // console.log(document.getElementById("username", "email", "psw").value);
+  logger(axiosLib = axios){
     let newUserInfo = {"email": document.getElementById("email").value, "username": document.getElementById("username").value, "password": document.getElementById("psw").value}
-    console.log(newUserInfo);
+    // console.log(newUserInfo);
+    axiosLib.post('api/signup', newUserInfo)
+    .then(function(response) {
+      console.log(response.data)
+    })
 
   }
 
