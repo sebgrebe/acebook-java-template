@@ -11,7 +11,7 @@ It uses:
 
 ### Card wall
 
-REPLACE THIS TEXT WITH A LINK TO YOUR CARD WALL
+[Trello Wall](https://trello.com/b/jAbvf7ri/acebook-clerkenwell-analytica)
 
 ### Design
 
@@ -43,7 +43,8 @@ curl -X POST "localhost:8080/api/posts" -d "{\"content\": \"Hi, Folks!\"}" -H "C
 
 ### Database
 
-Flyway is being used to manage your database migrations. Use the flyway docs to become familiar how to migrate your data.
+To run locally ```CREATE DATABASE acebook_dev```.
+If you want your users to persists, comment ```DROP TABLE users IF EXISTS``` in resources/db/migration/V1__init.sql (analogously for posts). 
 
 ### Deployment
 

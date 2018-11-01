@@ -24,6 +24,7 @@ public class User {
     private User() {}
 
     public User(String username, String email, String password) {
+        System.out.println(id);
         this.id = id;
         this.username = username;
         this.email = email;
@@ -48,6 +49,10 @@ public class User {
 
     public Long getId() {
         return this.id;
+    }
+
+    public void setId() {
+        this.id = id;
     }
 
 }

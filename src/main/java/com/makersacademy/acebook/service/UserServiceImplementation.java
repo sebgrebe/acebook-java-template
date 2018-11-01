@@ -20,6 +20,8 @@ public class UserServiceImplementation implements UserService {
     public void addUser(User user) {
       String encryptedPW = this.encryptPassword(user.getPassword());
       user.setPassword(encryptedPW);
+      user.setId();
+      System.out.println(user.getId());
       userRepository.save(user);
     }
 
