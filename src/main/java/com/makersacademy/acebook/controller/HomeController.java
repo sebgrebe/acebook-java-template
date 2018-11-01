@@ -1,6 +1,7 @@
 package com.makersacademy.acebook.controller;
 
 import com.makersacademy.acebook.model.User;
+// import com.makersacademy.acebook.services.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -17,6 +18,7 @@ public class HomeController {
 	@PostMapping("/api/signup")
 	public String signup(@RequestBody User user) {
 		System.out.println(user);
+		// UserService.save(user);
 		return "index";
 	}
 

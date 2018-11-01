@@ -31,11 +31,4 @@ public class UserTest {
         assertEquals("password_test",user.getPassword());
     }
 
-    @Test
-    public void setEncryptedPassword() {
-        String oldPassword = user.getPassword();
-        user.setEncryptedPassword();
-        assertThat(user.getPassword(), is(not(oldPassword)));
-    }
-
 }
