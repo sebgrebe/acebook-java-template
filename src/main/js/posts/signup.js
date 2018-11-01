@@ -5,23 +5,28 @@ class Signup extends React.Component {
     super(props);
   }
 
-  render() {
-    return (
-      <article>
-      <div className='sign-up'>
-        <label for="username"><b>Username</b></label>
-        <input type="text" placeholder="Enter Username" name="username"></input>
-        <label for="email"><b>Email</b></label>
-        <input type="text" placeholder="Enter Email" name="email"></input>
-        <label for="psw"><b>Password</b></label>
-        <input type="password" placeholder="Enter Password" name="psw"></input>
-      </div>
-      <div className="butt">
-        <button type="submit" class="signupbtn">Sign Up</button>
-      </div>
-      </article>
-    );
+  logger(){
+    console.log(document.getElementById("username", "email", "psw").value);
   }
+
+
+  render() {
+     return (
+       <article>
+       <div className='sign-up'>
+
+         <input type="text" placeholder="Enter Username" id="username"></input>
+
+         <input type="text" placeholder="Enter Email" id="email"></input>
+
+         <input type="password" placeholder="Enter Password" id="psw"></input>
+       </div>
+       <div className="butt">
+         <button onClick={() => this.logger()}>Sign Up</button>
+       </div>
+       </article>
+     );
+   }
 
 };
 
