@@ -5,15 +5,15 @@ class Signup extends React.Component {
   constructor(props) {
     super(props);
     this.state = { showSuccess: false };
-    
+
   }
 
   toggleSignUp() {
     var showSuccess = this.state.showSuccess;
-    this.setState({      
-      showSuccess: showSuccess == false ? true : false      
+    this.setState({
+      showSuccess: showSuccess == false ? true : false
     })
-   
+
   }
 
   logger(axiosLib = axios){
@@ -33,14 +33,12 @@ class Signup extends React.Component {
 
 
   render() {
+    if (this.state.showSuccess == false) {
      return (
        <article>
        <div className='sign-up'>
-
          <input type="text" placeholder="Enter Username" id="username"></input>
-
          <input type="text" placeholder="Enter Email" id="email"></input>
-
          <input type="password" placeholder="Enter Password" id="psw"></input>
        </div>
        <div className="butt">
@@ -48,8 +46,14 @@ class Signup extends React.Component {
        </div>
        </article>
      );
+   } else {
+     return (
+       <div>
+         <p>YOU ARE SUCCESSFULLY SIGNED IN</p>
+       </div>
+     )
    }
-
+ }
 };
 
 export default Signup;
