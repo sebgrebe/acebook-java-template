@@ -1,12 +1,16 @@
 import React from 'react';
+import axios from 'axios';
 
 class Signup extends React.Component {
   constructor(props) {
     super(props);
   }
 
-  logger(){
-    console.log(document.getElementById("username", "email", "psw").value);
+  logger(axioslib = axios){
+    // console.log(document.getElementById("username", "email", "psw").value);
+    let newUserInfo = {"email": document.getElementById("email").value, "username": document.getElementById("username").value, "password": document.getElementById("psw").value}
+    console.log(newUserInfo);
+
   }
 
 
